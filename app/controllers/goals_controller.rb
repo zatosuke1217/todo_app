@@ -24,7 +24,7 @@ class GoalsController < ApplicationController
   def create
     @goal = current_user.goals.new(goal_params)
     if @goal.save
-      @status = ture
+      @status = true
     else
       @status = false
     end
@@ -33,7 +33,7 @@ class GoalsController < ApplicationController
   # PATCH/PUT /goals/1
   def update
     if @goal.update(goal_params)
-      @status = ture
+      @status = true
     else
       @status = false
     end
