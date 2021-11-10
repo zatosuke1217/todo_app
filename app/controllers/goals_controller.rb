@@ -7,10 +7,6 @@ class GoalsController < ApplicationController
     @goals = current_user.goals.all
   end
 
-  # GET /goals/1
-  def show
-  end
-
   # GET /goals/new
   def new
     @goal = current_user.goals.new
@@ -45,6 +41,7 @@ class GoalsController < ApplicationController
   end
 
   private
+  
     def set_goal
       @goal = current_user.goals.find_by(id: params[:id])
       redirect_to(goals_url, alert: "ERROR!!") if @goal.blank?
